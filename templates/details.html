@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه اطلاعات</title>
+</head>
+<body>
+    <h1>اطلاعات مامور</h1>
+    {% if user %}
+        <p>کد ملی: {{ user.UserID }}</p>
+        <p>نام: {{ user.FirstName }}</p>
+        <p>نام خانوادگی: {{ user.LastName }}</p>
+        <p>تاریخ تولد: {{ user.BirthDate }}</p>
+        <p>ایمیل: {{ user.Email }}</p>
+        <p>موجودی: {{ user.Balance }}</p>
+    {% else %}
+        <p>کد ملی: {{ userID }}</p>
+        <p>مشخصاتی با کد ملی فوق یافت نشد</p>
+    {% endif %}
+</body>
+</html>
